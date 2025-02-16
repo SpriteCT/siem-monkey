@@ -18,6 +18,8 @@
  * @param {list} pre_events список событий
  * @param {string} outputelemsuffix класс DOM-елемента, где требуется отобразить информацию
  */
+let counter = 0
+
 function processTree(pre_events, outputelemsuffix = "") {
     let commandlineField = "object.process.cmdline";
     let events;
@@ -61,8 +63,6 @@ function processTree(pre_events, outputelemsuffix = "") {
         {
             elemClass += "alarm";
         }
-        console.log(x[commandlineField]);
-        console.log(x)
         let elem
         if (x[commandlineField] === null) {
             elem = {
@@ -298,7 +298,6 @@ async function processTreeBranchReverse(pre_events, outputelemsuffix = "") {
                 {
                     elemClass += " alarm";
                 }
-                console.log(x)
                 let elem;
                 if (x[commandlineField] === null) {
                     elem = {
@@ -361,27 +360,32 @@ async function processTreeBranchReverse(pre_events, outputelemsuffix = "") {
                     }
                 );
             e.insertBefore($('#output'));
+            counter = 0
             return;
         }
     } else {
         treeBranchEvents = treeBranchEvents.concat(pre_events);
-        pre_events.forEach(event => {
-            let processId = event['object.process.id']
-            events_for_children_waiting.push(processId);
-            //в качестве outputelemsuffix передаю guid, чтобы в обработчике понять, дла какого процесса получен ответ
-            //let filter = `event_src.host = "${event_src_host}" and msgid = "${processStartMsgid}" ` +
-            //`and object.process.parent.guid = "${processGuid}"`;
+        if (counter < 50) {
+            console.log(counter)
+            pre_events.forEach(event => {
+                counter = counter + 1
+                let processId = event['object.process.id']
+                events_for_children_waiting.push(processId);
+                //в качестве outputelemsuffix передаю guid, чтобы в обработчике понять, дла какого процесса получен ответ
+                //let filter = `event_src.host = "${event_src_host}" and msgid = "${processStartMsgid}" ` +
+                //`and object.process.parent.guid = "${processGuid}"`;
 
-            //в качестве outputelemsuffix передаю guid, чтобы в обработчике понять, дла какого процесса получен ответ
-            let filter
-            if (processId) {
-                filter = `event_src.host = "${event_src_host}" and object.process.parent.id = "${processId}" and status = 'success'`;
-            } else {
-                filter = `event_src.host = "${event_src_host}" and object.process.parent.id = "${event['subject.process.id']}" and status = 'success'`;
-            }
-            //let siemUrl = window.location.origin;
-            getdata(siemUrl, filter, count, processTreeBranchReverse, processId);
-        })
+                //в качестве outputelemsuffix передаю guid, чтобы в обработчике понять, дла какого процесса получен ответ
+                let filter
+                if (processId) {
+                    filter = `event_src.host = "${event_src_host}" and object.process.parent.id = "${processId}" and status = 'success'`;
+                } else {
+                    filter = `event_src.host = "${event_src_host}" and object.process.parent.id = "${event['subject.process.id']}" and status = 'success'`;
+                }
+                //let siemUrl = window.location.origin;
+                getdata(siemUrl, filter, count, processTreeBranchReverse, processId);
+            })
+        }
     }
 }
 

@@ -12,10 +12,9 @@
     See the License for the specific language governing permissions and
     limitations under the License. */
 
-
 body {
-  width:800px;
-  height: 400px;
+    width: 800px;
+    height: 600px;
 }
 
 body.loading .lds-dual-ring {
@@ -26,49 +25,53 @@ body.loading .lds-dual-ring {
     display: block;
 }
 
-* { font-family:Roboto,Helvetica Neue,sans-serif; font-size:10px; }
+* {
+    font-family: Roboto, Helvetica Neue, sans-serif;
+    font-size: 14px;
+}
 
 .parent {
     color: white;
-    background-color:  #2196F3;
+    background-color: #2196F3;
     padding-top: 1px;
     margin-top: 2px;
     margin-left: 2px;
     padding-left: 5px;
-    border: 1px solid black; 
+    border: 1px solid black;
 }
 
 .child {
     background-color: #0175c3;
     color: ghostwhite;
     margin-left: 10px;
-    margin-top:5px;
+    margin-top: 5px;
     padding-left: 5px;
 }
+
 div.usefullfiltersdiv {
-  font-size: 12px;
-  font-weight: bold;
-  border: none;
-  display: inline;
-  line-height: 1.8;
-  color: #338fcc;
-  text-decoration: none!important;
-  transition-property: color;
-  transition-duration: .33s;
-  transition-timing-function: ease-out;
-  display: block;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    display: inline;
+    line-height: 1.8;
+    color: #338fcc;
+    text-decoration: none!important;
+    transition-property: color;
+    transition-duration: .33s;
+    transition-timing-function: ease-out;
+    display: block;
 }
 
 div.usefullfilters {
-  display: inline;
-  line-height: 1.8;
-  color: #338fcc;
-  text-decoration: none!important;
-  transition-property: color;
-  transition-duration: .33s;
-  transition-timing-function: ease-out;
-  display: block;
-  cursor: pointer;
+    display: inline;
+    line-height: 1.8;
+    color: #338fcc;
+    text-decoration: none!important;
+    transition-property: color;
+    transition-duration: .33s;
+    transition-timing-function: ease-out;
+    display: block;
+    cursor: pointer;
 }
 
 div.monkey {
@@ -84,7 +87,7 @@ div.monkey {
 }
 
 div.monkeysessionslinks {
-  margin-left: 10px;
+    margin-left: 10px;
 }
 
 div.monkeylinks {
@@ -92,41 +95,47 @@ div.monkeylinks {
 }
 
 div.extlink {
-    color:#338fcc;
+    color: #338fcc;
     margin-left: 10px;
-    margin-top:5px;
-    cursor: pointer; 
+    margin-top: 5px;
+    cursor: pointer;
 }
 
 div.systemProcesses {
-    color:rgb(119, 41, 41)
+    color: rgb(119, 41, 41)
 }
 
 div.systemDwmOrUmfdProcesses {
-    color:darkgray
+    color: darkgray
 }
 
 li .alarm {
     color: coral;
 }
 
-  /* The switch - the box around the slider */
+
+/* The switch - the box around the slider */
+
 .switch {
     position: relative;
     display: inline-block;
     width: 40px;
     height: 14px;
-  }
-  
-  /* Hide default HTML checkbox */
-  .switch input {
+}
+
+
+/* Hide default HTML checkbox */
+
+.switch input {
     opacity: 0;
     width: 0;
     height: 0;
-  }
-  
-  /* The slider */
-  .slider {
+}
+
+
+/* The slider */
+
+.slider {
     position: absolute;
     cursor: pointer;
     top: 0;
@@ -136,9 +145,9 @@ li .alarm {
     background-color: #ccc;
     -webkit-transition: .4s;
     transition: .4s;
-  }
-  
-  .slider:before {
+}
+
+.slider:before {
     position: absolute;
     content: "";
     height: 10px;
@@ -148,40 +157,42 @@ li .alarm {
     background-color: white;
     -webkit-transition: .4s;
     transition: .4s;
-  }
-  
-  input:checked + .slider {
+}
+
+input:checked+.slider {
     background-color: #2bb13d;
-  }
-  
-  input:focus + .slider {
+}
+
+input:focus+.slider {
     box-shadow: 0 0 1px #2196F3;
-  }
-  
-  input:checked + .slider:before {
+}
+
+input:checked+.slider:before {
     -webkit-transform: translateX(22px);
     -ms-transform: translateX(22px);
     transform: translateX(22px);
-  }
-  
-  /* Rounded sliders */
-  .slider.round {
-    border-radius: 26px;
-  }
-  
-  .slider.round:before {
-    border-radius: 50%;
-  }
-  
-  .checkbox_left {
-    float: left;
-  }
+}
 
-  .btn {
+
+/* Rounded sliders */
+
+.slider.round {
+    border-radius: 26px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+.checkbox_left {
+    float: left;
+}
+
+.btn {
     position: relative;
     display: inline-block;
     padding: 1px;
-    font-size: 10px;
+    font-size: 14px;
     font-weight: 700;
     line-height: 16px;
     color: #333;
@@ -189,7 +200,7 @@ li .alarm {
     vertical-align: middle;
     cursor: pointer;
     background-color: #eee;
-    background-image: linear-gradient(#fcfcfc,#eee);
+    background-image: linear-gradient(#fcfcfc, #eee);
     border: 1px solid #d5d5d5;
     border-radius: 3px;
     -webkit-user-select: none;
@@ -199,93 +210,90 @@ li .alarm {
     -webkit-appearance: none
 }
 
-span.oneline
-{
-  display: inline;
+span.oneline {
+    display: inline;
 }
 
-.openMsgs
-{
-  cursor: pointer;
-  margin-left: 10px;   
-  margin-top: 10px;
-  font-weight: bold;
-  color: #338fcc;
+.openMsgs {
+    cursor: pointer;
+    margin-left: 10px;
+    margin-top: 10px;
+    font-weight: bold;
+    color: #338fcc;
 }
 
-.parameter
-{
-  font-weight: bold;
-  color: #cc3333;
+.parameter {
+    font-weight: bold;
+    color: #cc3333;
 }
 
-.good
-{
-  font-weight: bold;
-  color: #08f108;
+.good {
+    font-weight: bold;
+    color: #08f108;
 }
-.susp
-{
-  font-weight: bold;
-  color: #a03f3f;
+
+.susp {
+    font-weight: bold;
+    color: #a03f3f;
 }
-.danger
-{
-  font-weight: bold;
-  color: #f00;
+
+.danger {
+    font-weight: bold;
+    color: #f00;
 }
 
 div.hashoutput {
-  margin-left: 5px;
-  margin-top: 5px;
-  display: inline;
-  line-height: 1.4;
-  color: #338fcc;
-  text-decoration: none!important;
-  transition-property: color;
-  transition-duration: .33s;
-  transition-timing-function: ease-out;
-  display: block;
+    margin-left: 5px;
+    margin-top: 5px;
+    display: inline;
+    line-height: 1.4;
+    color: #338fcc;
+    text-decoration: none!important;
+    transition-property: color;
+    transition-duration: .33s;
+    transition-timing-function: ease-out;
+    display: block;
 }
 
 .node rect {
-  cursor: pointer;
-  fill: #fff;
-  fill-opacity: 1;
+    cursor: pointer;
+    fill: #fff;
+    fill-opacity: 1;
 }
 
 .node rect.noderect {
-  cursor: pointer;
-  fill: #fff;
-  fill-opacity: 1;
-  stroke: #3182bd;
-  stroke-width: 1.5px;
+    cursor: pointer;
+    fill: #fff;
+    fill-opacity: 1;
+    stroke: #3182bd;
+    stroke-width: 1.5px;
 }
 
 .tabs {
-  width:780px;
+    width: 780px;
 }
-
 
 .lds-dual-ring {
-  display: inline-block;
+    display: inline-block;
 }
+
 .lds-dual-ring:after {
-  content: " ";
-  display: block;
-  width: 64px;
-  height: 64px;
-  margin: 8px;
-  border-radius: 50%;
-  border: 6px solid #338fcc;
-  border-color: #338fcc transparent #338fcc transparent;
-  animation: lds-dual-ring 1.2s linear infinite;
+    content: " ";
+    display: block;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border-radius: 50%;
+    border: 6px solid #338fcc;
+    border-color: #338fcc transparent #338fcc transparent;
+    animation: lds-dual-ring 1.2s linear infinite;
 }
+
 @keyframes lds-dual-ring {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
