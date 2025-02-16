@@ -46,7 +46,7 @@ function d3_process_line_click(d) {
         ` and (object.process.id = ${d.data.original['object.process.id']} or subject.process.id = ${d.data.original['object.process.id']})`;
 
     if (typeof(chrome.tabs) !== 'undefined') { // если вызов из popup плагина
-        chrome.tabs.create({ url: `${siemUrl}/#/events/view?where=${condition}` });
+        chrome.tabs.create({ url: `${siemUrl}/#/events/view?where=${condition}`, active: false });
     } else {
         window.open(`${siemUrl}/#/events/view?where=${condition}`, "_blank");
     }
