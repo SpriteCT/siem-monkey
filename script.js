@@ -137,7 +137,7 @@ let siemMonkeyInUI = setTimeout(function() {
             // а CSSы уже и так загружены расширением
             observer.observe(document, { childList: true, subtree: true, characterData: true, attributes: true });
         }
-    }, 2500) //TODO: иногда не успевает, надо придумать способ получше
+    }, 10000) //TODO: иногда не успевает, надо придумать способ получше
 
 function extractLast(term) {
     let textbox = null;
