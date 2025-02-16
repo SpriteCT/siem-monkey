@@ -190,44 +190,6 @@ let observer = new MutationObserver(async mutations => {
                 fields.push('not');
                 fields.push('in_subnet');
             }
-
-            ta = $("textarea", mutation.target.parentNode);
-            ta.on("keydown", function(event) {
-                    if (event.keyCode === $.ui.keyCode.TAB && $(this).autocomplete("instance").menu.active) {
-                        event.preventDefault();
-                    }
-                })
-                .autocomplete({
-                    appendTo: ta.parent(),
-                    position: { my: "left top", at: `right top` },
-                    minLength: 1,
-                    source: function(request, response) {
-                        response($.ui.autocomplete.filter(fields, extractLast(request.term)));
-                    },
-                    focus: function() {
-                        return false;
-                    },
-                    open: function() {
-                        ta.textareaHelper();
-                        let XY = ta.textareaHelper("caretPos");
-                        let x = XY.left + 5;
-                        let y = XY.top + 20;
-                        $('.ui-autocomplete', ta.parent()).css('width', '230px'); // 230px хватит всем
-                        $('.ui-autocomplete', ta.parent()).position({ my: "left top", at: `left+${x} top+${y}`, of: ta });
-                    },
-                    select: function(event, ui) {
-                        let textbox = $(this);
-                        let end = textbox[0].selectionStart;
-                        let start = this.value.lastIndexOf(" ", end);
-                        let newvalue = this.value.substring(0, start) + " " //старое начало
-                            +
-                            ui.item.value + " " //новая середина
-                            +
-                            this.value.substring(end, this.value.length); //старый конец
-                        this.value = newvalue;
-                        return false;
-                    }
-                });
         }
 
         for (let addedNode of mutation.addedNodes) {
